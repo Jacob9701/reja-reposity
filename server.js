@@ -31,7 +31,7 @@ app.get("/author", (req, res) => {
 
 // Home page
 app.get("/", (req, res) => {
-  res.render("harid");
+  res.render("author");
 });
 
 // Form create item
