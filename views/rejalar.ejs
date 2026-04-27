@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reja</title>
+</head>
+<body style="margin: 0; background: #eeeeee; font-family: Arial, sans-serif;">
+
+  <div style="width: 80%; margin: 40px auto; text-align: center;">
+
+    <h1 style="font-size: 42px; font-weight: 400; margin-bottom: 25px;">
+      REJA VA MAQSADLAR
+    </h1>
+
+    <form action="/create-item" method="POST"
+      style="background: white; padding: 12px; border-radius: 6px; display: flex; gap: 10px;">
+
+      <input
+        name="item"
+        autofocus
+        autocomplete="off"
+        type="text"
+        style="flex: 1; padding: 12px; border-radius: 5px; border: 1px solid #aaa; font-size: 16px;"
+      />
+
+      <button
+        type="submit"
+        style="background: #007bff; color: white; border: none; border-radius: 20px; padding: 12px 22px; font-weight: bold;">
+        Yangi Reja Qoshish
+      </button>
+
+    </form>
+
+    <button
+      id="clean-all"
+      style="margin-top: 18px; float: left; background: #dc3545; color: white; border: none; border-radius: 20px; padding: 12px 22px; font-weight: bold;">
+      Hamma Rejalarni O'chirish
+    </button>
+
+  </div>
+
+</body>
+</html>

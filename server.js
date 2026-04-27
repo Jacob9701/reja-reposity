@@ -31,7 +31,7 @@ app.get("/author", (req, res) => {
 
 // Home page
 app.get("/", (req, res) => {
-  res.render("author");
+  res.render("rejalar");
 });
 
 // Form create item
@@ -44,5 +44,6 @@ app.post("/create-item", (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function () {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}, http://localhost:${PORT}`);
 });
+
