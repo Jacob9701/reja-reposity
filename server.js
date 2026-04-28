@@ -1,49 +1,30 @@
-const express = require("express");
-const app = express();
-const fs = require("fs");
+const mongodb = require("mongodb");
+const htt = require("http");
 
-let user;
+let db;
+const connectionString = "mongodb+srv://jjuraboev330_db_user:RGFsU2ZF5hE8iZ5C@cluster0.oanqewp.mongodb.net/rejalar?appName=Cluster0"
 
-// JSON file o‘qish
-fs.readFile("database/user.json", "utf8", (err, data) => {
-  if (err) {
-    console.log("ERROR:", err);
-  } else {
-    user = JSON.parse(data);
+
+mongodb.connect(
+  connectionString,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err, client) => {
+    if (err) console.log("ERROR on connection MongoDB");
+    else {
+      console.log("MongoDB connection succeed");
+      module.exports = client;
+      
+      const app = require("./app");
+      const server = http.createServer(app);
+      let PORT = 3000;
+      server.listen(PORT, function () {
+        console.log(
+          'The server is running successfully on port: ${PORT}, http://localhost:${PORT}'
+        );
+      });
+    }
   }
-});
-
-// 1. Middleware
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// 2. Views
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-// 3. Routing
-
-// Author portfolio page
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
-});
-
-// Home page
-app.get("/", (req, res) => {
-  res.render("rejalar");
-});
-
-// Form create item
-app.post("/create-item", (req, res) => {
-  console.log(req.body);
-  res.send("Item created successfully");
-});
-
-// 4. Server start
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, function () {
-  console.log(`Server is running on port ${PORT}, http://localhost:${PORT}`);
-});
-
+);
