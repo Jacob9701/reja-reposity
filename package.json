@@ -12,9 +12,11 @@
   "author": "Jacob",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.3",
+    "20": "^3.1.9",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
     "mongodb": "^3.2.6",
-    "nodemon": "^2.0.15"
+    "node": "^16.17.1",
+    "ws": "^8.20.0"
   }
 }

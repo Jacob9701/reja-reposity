@@ -65,21 +65,54 @@ console.log("passed here 1");
 
 
 
-function countLetter(letter, talaba) {
-    let count = 0;
+//function countLetter(letter, talaba) {
+ //   let count = 0;
 
-    for(let i = 0; i < talaba.length; i++) {
-        if(talaba[i] === letter) {
-            count++;
-        }
-    }
+  //  for(let i = 0; i < talaba.length; i++) {
+  //      if(talaba[i] === letter) {
+ //           count++;
+ //       }
+ //   }
 
-    return count;
+ //   return count;
+//}
+
+//console.log(countLetter("e", "engineer") );
+
+//function count(word1, word2) {
+  //const new_word = word1.split("");
+//  if (word1.length == word2.length) {
+ //   return new_word.every((x) => word2.includes(x));
+//  } else {
+ //   return false;
+ // }
+//}
+//console.log(count("mitgroup", "gmtiprou"));
+
+
+function checkContent(str1, str2) {
+  console.log("HELLO WORLD:", str1);
+  if (
+    str1
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("") ===
+    str2
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
-console.log(countLetter("e", "engineer") );
-
-
-
+const natija = checkContent(
+  "HELLO WORLD",
+  "HELLO WORLD",
+);
+console.log("matn bir xilmi", natija);
 
 
