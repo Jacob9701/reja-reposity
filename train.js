@@ -90,29 +90,70 @@ console.log("passed here 1");
 //console.log(count("mitgroup", "gmtiprou"));
 
 
-function checkContent(str1, str2) {
-  console.log("HELLO WORLD:", str1);
-  if (
-    str1
-      .toLowerCase()
-      .split("")
-      .sort()
-      .join("") ===
-    str2
-      .toLowerCase()
-      .split("")
-      .sort()
-      .join("")
-  ) {
-    return true;
-  } else {
-    return false;
+// function checkContent(str1, str2) {
+//   console.log("HELLO WORLD:", str1);
+//   if (
+//     str1
+//       .toLowerCase()
+//       .split("")
+//       .sort()
+//       .join("") ===
+//     str2
+//       .toLowerCase()
+//       .split("")
+//       .sort()
+//       .join("")
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// const natija = checkContent(
+//   "HELLO WORLD",
+//   "HELLO WORLD",
+// );
+// console.log("matn bir xilmi", natija);
+
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.products = {
+      non: non,
+      lagmon: lagmon,
+      cola: cola,
+    };
+  }
+
+  // vaqt olish
+  getTime() {
+    const now = new Date();
+    return now.getHours() + ":" + now.getMinutes();
+  }
+
+  // qoldiq
+  qoldiq() {
+    const time = this.getTime();
+    return 'Hozir ${time}da ${this.products.non}ta non, ${this.products.lagmon}ta lagmon va ${this.products.cola}ta cola mavjud!';
+  }
+
+  // sotish
+  sotish(product, amount) {
+    if (this.products[product] >= amount) {
+      this.products[product] -= amount;
+      console.log(`${amount}ta ${product} sotildi`);
+    } else {
+      console.log(`${product} yetarli emas`);
+    }
+  }
+
+  // qabul qilish
+  qabul(product, amount) {
+    this.products[product] += amount;
+    console.log(`${amount}ta ${product} qabul qilindi`);
   }
 }
-const natija = checkContent(
-  "HELLO WORLD",
-  "HELLO WORLD",
-);
-console.log("matn bir xilmi", natija);
+
+
 
 
