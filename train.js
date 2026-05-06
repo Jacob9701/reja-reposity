@@ -116,55 +116,73 @@ console.log("passed here 1");
 // console.log("matn bir xilmi", natija);
 
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
+
+
+
+
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+
+//   vaqt() {
+//     const date = new Date();
+//     return date.getHours() + ":" + date.getMinutes();
+//   }
+
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this.vaqt()}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
+//     );
+//   }
+
+//   sotish(mahsulot, soni) {
+//     if (mahsulot === "non") {
+//       this.non = this.non - soni;
+//     } else if (mahsulot === "lagmon") {
+//       this.lagmon = this.lagmon - soni;
+//     } else if (mahsulot === "cola") {
+//       this.cola = this.cola - soni;
+//     }
+
+//     console.log(`${this.vaqt()}da ${soni}ta ${mahsulot} sotildi`);
+//   }
+
+//   qabul(mahsulot, soni) {
+//     if (mahsulot === "non") {
+//       this.non = this.non + soni;
+//     } else if (mahsulot === "lagmon") {
+//       this.lagmon = this.lagmon + soni;
+//     } else if (mahsulot === "cola") {
+//       this.cola = this.cola + soni;
+//     }
+
+//     console.log(`${this.vaqt()}da ${soni}ta ${mahsulot} qabul qilindi`);
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// shop.qoldiq();
+
+// shop.sotish("non", 3);
+
+// shop.qabul("cola", 4);
+
+// shop.qoldiq();
+
+
+
+function getReverse(str) {
+  let result = "";
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    result += str[i];
   }
 
-  vaqt() {
-    const date = new Date();
-    return date.getHours() + ":" + date.getMinutes();
-  }
-
-  qoldiq() {
-    console.log(
-      `Hozir ${this.vaqt()}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
-    );
-  }
-
-  sotish(mahsulot, soni) {
-    if (mahsulot === "non") {
-      this.non = this.non - soni;
-    } else if (mahsulot === "lagmon") {
-      this.lagmon = this.lagmon - soni;
-    } else if (mahsulot === "cola") {
-      this.cola = this.cola - soni;
-    }
-
-    console.log(`${this.vaqt()}da ${soni}ta ${mahsulot} sotildi`);
-  }
-
-  qabul(mahsulot, soni) {
-    if (mahsulot === "non") {
-      this.non = this.non + soni;
-    } else if (mahsulot === "lagmon") {
-      this.lagmon = this.lagmon + soni;
-    } else if (mahsulot === "cola") {
-      this.cola = this.cola + soni;
-    }
-
-    console.log(`${this.vaqt()}da ${soni}ta ${mahsulot} qabul qilindi`);
-  }
+  return result;
 }
 
-const shop = new Shop(4, 5, 2);
-
-shop.qoldiq();
-
-shop.sotish("non", 3);
-
-shop.qabul("cola", 4);
-
-shop.qoldiq();
+console.log(getReverse("hello"));
