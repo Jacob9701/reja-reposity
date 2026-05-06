@@ -185,4 +185,4 @@ function getReverse(str) {
   return result;
 }
 
-console.log(getReverse("hello"));
+console.log(getReverse("hello world"));
