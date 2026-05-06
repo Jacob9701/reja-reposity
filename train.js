@@ -66,26 +66,26 @@ console.log("passed here 1");
 
 
 //function countLetter(letter, talaba) {
- //   let count = 0;
+//   let count = 0;
 
-  //  for(let i = 0; i < talaba.length; i++) {
-  //      if(talaba[i] === letter) {
- //           count++;
- //       }
- //   }
+//  for(let i = 0; i < talaba.length; i++) {
+//      if(talaba[i] === letter) {
+//           count++;
+//       }
+//   }
 
- //   return count;
+//   return count;
 //}
 
 //console.log(countLetter("e", "engineer") );
 
 //function count(word1, word2) {
-  //const new_word = word1.split("");
+//const new_word = word1.split("");
 //  if (word1.length == word2.length) {
- //   return new_word.every((x) => word2.includes(x));
+//   return new_word.every((x) => word2.includes(x));
 //  } else {
- //   return false;
- // }
+//   return false;
+// }
 //}
 //console.log(count("mitgroup", "gmtiprou"));
 
@@ -118,42 +118,53 @@ console.log("passed here 1");
 
 class Shop {
   constructor(non, lagmon, cola) {
-    this.products = {
-      non: non,
-      lagmon: lagmon,
-      cola: cola,
-    };
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
   }
 
-  // vaqt olish
-  getTime() {
-    const now = new Date();
-    return now.getHours() + ":" + now.getMinutes();
+  vaqt() {
+    const date = new Date();
+    return date.getHours() + ":" + date.getMinutes();
   }
 
-  // qoldiq
   qoldiq() {
-    const time = this.getTime();
-    return 'Hozir ${time}da ${this.products.non}ta non, ${this.products.lagmon}ta lagmon va ${this.products.cola}ta cola mavjud!';
+    console.log(
+      `Hozir ${this.vaqt()}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
+    );
   }
 
-  // sotish
-  sotish(product, amount) {
-    if (this.products[product] >= amount) {
-      this.products[product] -= amount;
-      console.log(`${amount}ta ${product} sotildi`);
-    } else {
-      console.log(`${product} yetarli emas`);
+  sotish(mahsulot, soni) {
+    if (mahsulot === "non") {
+      this.non = this.non - soni;
+    } else if (mahsulot === "lagmon") {
+      this.lagmon = this.lagmon - soni;
+    } else if (mahsulot === "cola") {
+      this.cola = this.cola - soni;
     }
+
+    console.log(`${this.vaqt()}da ${soni}ta ${mahsulot} sotildi`);
   }
 
-  // qabul qilish
-  qabul(product, amount) {
-    this.products[product] += amount;
-    console.log(`${amount}ta ${product} qabul qilindi`);
+  qabul(mahsulot, soni) {
+    if (mahsulot === "non") {
+      this.non = this.non + soni;
+    } else if (mahsulot === "lagmon") {
+      this.lagmon = this.lagmon + soni;
+    } else if (mahsulot === "cola") {
+      this.cola = this.cola + soni;
+    }
+
+    console.log(`${this.vaqt()}da ${soni}ta ${mahsulot} qabul qilindi`);
   }
 }
 
+const shop = new Shop(4, 5, 2);
 
+shop.qoldiq();
 
+shop.sotish("non", 3);
 
+shop.qabul("cola", 4);
+
+shop.qoldiq();
