@@ -175,14 +175,18 @@ console.log("passed here 1");
 
 
 
-function getReverse(str) {
-  let result = "";
-
-  for (let i = str.length - 1; i >= 0; i--) {
-    result += str[i];
+function findDoublers(str) {
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str[i] === str[i + 1]) {
+      return true;
+    }
   }
 
-  return result;
+  return false;
 }
 
-console.log(getReverse("hello world"));
+console.log(findDoublers("Hello world")); // true
+console.log(findDoublers("salom")); // false
+console.log(findDoublers("apple")); // true
+
+
