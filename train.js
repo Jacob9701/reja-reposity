@@ -175,18 +175,35 @@ console.log("passed here 1");
 
 
 
-function findDoublers(str) {
-  for (let i = 0; i < str.length - 1; i++) {
-    if (str[i] === str[i + 1]) {
-      return true;
+// function findDoublers(str) {
+//   for (let i = 0; i < str.length - 1; i++) {
+//     if (str[i] === str[i + 1]) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
+// console.log(findDoublers("Hello world")); // true
+// console.log(findDoublers("salom")); // false
+// console.log(findDoublers("apple")); // true
+
+
+function getHighestIndex(arr) {
+  let max = arr[0];
+  let index = 0;
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      index = i;
     }
   }
 
-  return false;
+  return index;
 }
 
-console.log(findDoublers("Hello world")); // true
-console.log(findDoublers("salom")); // false
-console.log(findDoublers("apple")); // true
+console.log(getHighestIndex([10, 45, 23, 45, 7]));
 
 
