@@ -190,20 +190,18 @@ console.log("passed here 1");
 // console.log(findDoublers("apple")); // true
 
 
-function getHighestIndex(arr) {
-  let max = arr[0];
-  let index = 0;
+function getPositive(arr) {
+  let result = "";
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-      index = i;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      result += arr[i];
     }
   }
 
-  return index;
+  return result;
 }
 
-console.log(getHighestIndex([10, 45, 23, 45, 7]));
+console.log(getPositive([3, -7, 5, -2, 8]));
 
 
