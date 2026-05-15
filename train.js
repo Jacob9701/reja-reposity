@@ -190,18 +190,29 @@ console.log("passed here 1");
 // console.log(findDoublers("apple")); // true
 
 
-function getPositive(arr) {
-  let result = "";
+function majorityElement(numbers) {
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > 0) {
-      result += arr[i];
+  let max_count = 0
+  let most_number = 0
+
+  for (let i of numbers) {
+    let count = 0
+
+    for (let j of numbers) {
+      if (i === j) {
+        count += 1
+      }
+    }
+
+    if (count > max_count) {
+      max_count = count
+      most_number = i
     }
   }
 
-  return result;
+  return most_number
 }
 
-console.log(getPositive([3, -7, 5, -2, 8]));
+let result = majorityElement([7, 2, 7, 4, 7, 3, 2])
 
-
+console.log(result)
