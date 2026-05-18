@@ -190,29 +190,18 @@ console.log("passed here 1");
 // console.log(findDoublers("apple")); // true
 
 
-function majorityElement(numbers) {
+function findLongestWord(text) {
+  let words = text.split(" ");
+  let longest_word = "";
 
-  let max_count = 0
-  let most_number = 0
-
-  for (let i of numbers) {
-    let count = 0
-
-    for (let j of numbers) {
-      if (i === j) {
-        count += 1
-      }
-    }
-
-    if (count > max_count) {
-      max_count = count
-      most_number = i
+  for (let word of words) {
+    if (word.length > longest_word.length) {
+      longest_word = word;
     }
   }
 
-  return most_number
+  return longest_word;
 }
 
-let result = majorityElement([7, 2, 7, 4, 7, 3, 2])
-
-console.log(result)
+let result = findLongestWord("I am learning python");
+console.log(result); // python
