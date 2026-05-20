@@ -190,18 +190,36 @@ console.log("passed here 1");
 // console.log(findDoublers("apple")); // true
 
 
-function findLongestWord(text) {
-  let words = text.split(" ");
-  let longest_word = "";
+// function findLongestWord(text) {
+//   let words = text.split(" ");
+//   let longest_word = "";
 
-  for (let word of words) {
-    if (word.length > longest_word.length) {
-      longest_word = word;
+//   for (let word of words) {
+//     if (word.length > longest_word.length) {
+//       longest_word = word;
+//     }
+//   }
+
+//   return longest_word;
+// }
+
+// let result = findLongestWord("I am learning python");
+// console.log(result); // python
+
+
+function countVowels(text) {
+  let vowels = "aeiou";
+  let count = 0;
+
+  for (let letter of text) {
+    if (vowels.includes(letter)) {
+      count++;
     }
   }
 
-  return longest_word;
+  return count;
 }
 
-let result = findLongestWord("I am learning python");
-console.log(result); // python
+let result = countVowels("I am learning python");
+
+console.log(result);
