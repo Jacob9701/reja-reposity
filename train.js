@@ -207,19 +207,35 @@ console.log("passed here 1");
 // console.log(result); // python
 
 
-function countVowels(text) {
-  let vowels = "aeiou";
-  let count = 0;
+// function countVowels(text) {
+//   let vowels = "aeiou";
+//   let count = 0;
 
-  for (let letter of text) {
-    if (vowels.includes(letter)) {
-      count++;
-    }
+//   for (let letter of text) {
+//     if (vowels.includes(letter)) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// let result = countVowels("I am learning python");
+
+// console.log(result);
+
+
+function reverseSentence(text) {
+  let words = text.split(" ");
+  let result = [];
+
+  for (let word of words) {
+    let reversed = word.split("").reverse().join("");
+    result.push(reversed);
   }
 
-  return count;
+  return result.join(" ");
 }
 
-let result = countVowels("I am learning python");
-
-console.log(result);
+console.log(reverseSentence("I love football"));
+// return: "I evol llabtoof"
